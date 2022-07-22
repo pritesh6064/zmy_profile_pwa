@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pwa-ui5-priteshprofile-v1.0.3';
+const CACHE_NAME = 'pwa-ui5-priteshprofile-v1.0.4';
 const RESOURCES_TO_PRELOAD = [
     'index.html',
     'logo.svg',
@@ -10,6 +10,7 @@ const RESOURCES_TO_PRELOAD = [
     'icons/',
     'img/',
     'Component.js',
+    'Component-preload.js',
     'favicon.ico',
     'manifest.json'
     //'offline-404.html'
