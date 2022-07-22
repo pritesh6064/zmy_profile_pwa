@@ -28,6 +28,7 @@ const resourcesToCache = RESOURCES_TO_PRELOAD.concat([
 
 // Preload some resources during install
 self.addEventListener('install', function (event) {
+    self.skipWaiting();
     event.waitUntil(
         caches.open(CACHE_NAME).then(function (cache) {
             return cache.addAll(RESOURCES_TO_PRELOAD);
