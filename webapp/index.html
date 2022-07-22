@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- PWA related meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- PWA manifest -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="OpenUI5 TODO PWA">
+    <link rel="apple-touch-icon" href="img/icon-152x152.png">
+    <!-- Windows related -->
+    <meta name="msapplication-TileImage" content="img/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#386CC1">
+    <meta name="theme-color" content="#164391">
+
+    <title>Pritesh Patel - Profile</title>
+
+    <style>
+        body {
+            background: #244C7C;
+        }
+
+        #splash-screen {
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+    <!-- Register service worker -->
+    <script src="register-worker.js"></script>
+
+    <script id="sap-ui-bootstrap" src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+        data-sap-ui-theme="sap_fiori_3" data-sap-ui-preload="async" data-sap-ui-resourceroots='{"pritesh.fiori.zmyprofilepwa": "./"}'
+        data-sap-ui-compatVersion="edge" data-sap-ui-libs="sap.m" data-sap-ui-xx-waitForTheme="true"
+        data-sap-ui-oninit="module:sap/ui/core/ComponentSupport" ></script>
+
+    <script>
+        sap.ui.getCore().attachInit(function () {
+            sap.ui.require([
+                "sap/m/Shell",
+                "sap/ui/core/ComponentContainer"
+            ], function (Shell, ComponentContainer) {
+                var oCompContainer = new ComponentContainer({
+                    height: "100%"
+                });
+
+                // initialize the UI component with async property
+                var oComponent = sap.ui.component({
+                    async: true,
+                    manifestFirst: true,
+                    name: "pritesh.fiori.zmyprofilepwa"
+                }).then(function (oComponent) {
+                    oCompContainer.setComponent(oComponent);
+                });
+
+                new Shell({
+                    showLogout: false,
+                    app: oCompContainer
+                }).placeAt("content");
+            });
+        });
+    </script>
+</head>
+
+<body id="body" class="sapUiBody">
+    <div id="splash-screen">
+        <h1>Pritesh Patel - SAP Developer Profile</h1>
+        <img src="logo.svg" alt="UI5 TODO Logo">
+        <p>This Small App shows my Portfolio</p>
+    </div>
+    <div id="content"></div>
+    <!-- <div data-sap-ui-component data-name="pritesh.fiori.zmyprofilepwa" data-id="container"
+        data-settings='{"id" : "zmy_profile_pwa"}'></div> -->
+</body>
+
+</html>

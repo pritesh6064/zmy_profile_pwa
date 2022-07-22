@@ -1,0 +1,42 @@
+<mvc:View
+    controllerName="pritesh.fiori.zmyprofilepwa.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"    
+    xmlns="sap.m"
+>
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+						<HBox>
+							<VBox height="20%">
+								<Image class="sapUiTinyMargin myImage" src="./img/ProfilePic.jpg" height="165px"/>
+							</VBox>
+							<SlideTile class="sapUiTinyMargin tileLayout">
+								<tiles>
+									<GenericTile frameType="TwoByOne" state="Loaded" header="Welcome">
+										<TileContent footer="">
+											<FeedContent contentText="Here you will find information about me and my work."/>
+										</TileContent>
+									</GenericTile>
+									<GenericTile frameType="TwoByOne" state="Loaded" header="Pritesh Patel">
+										<TileContent footer="Residing in Illinois">
+											<NewsContent contentText="" subheader="(657) 238-9455"/>
+										</TileContent>
+									</GenericTile>
+								</tiles>
+							</SlideTile>
+						</HBox>
+						<Panel class="sapUiLargeMarginTop" expandable="false" expand="true" headerText="My Portfolio">
+							<HBox>
+								<GenericTile class="sapUiMediumMarginBegin sapUiTinyMarginTop tileLayout" header="My Projects" press="press"/>
+								<GenericTile class="sapUiMediumMarginBegin sapUiTinyMarginTop tileLayout" header="Work History" press="press"/>
+								<GenericTile class="sapUiMediumMarginBegin sapUiTinyMarginTop tileLayout" header="About Me" press="press"/>
+							</HBox>
+						</Panel>
+					</content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
